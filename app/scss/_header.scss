@@ -1,0 +1,60 @@
+.header {
+  nav {
+    padding: 24px;
+  }
+
+  &__ncc {
+    font-family: 'BrandonGrotW01-Light';
+    src: url('//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.eot');
+    src: url('//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.eot?#iefix')
+        format('embedded-opentype'),
+      url('//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.woff2')
+        format('woff2'),
+      url('//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.woff')
+        format('woff'),
+      url('//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.ttf')
+        format('truetype'),
+      url('//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.svg#BrandonGrotW01-Light')
+        format('svg');
+
+    font-size: 22px;
+    font-weight: 400;
+    color: white;
+  }
+  &__menu {
+    //Mobile menu
+    > span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: white;
+
+      &:not(:last-child) {
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  &__links {
+    a {
+      font-size: 1rem;
+      margin: 0;
+      color: white;
+
+      &:not(:last-child) {
+        padding-right: 1.25em;
+      }
+
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+}
+
+/*padding: 0.45rem;*/
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

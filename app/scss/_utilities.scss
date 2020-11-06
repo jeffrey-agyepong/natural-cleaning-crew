@@ -1,0 +1,27 @@
+.section-main {
+  background: url(../img/clean.jpg) no-repeat bottom/cover;
+  padding: 8rem 5rem;
+  background-blend-mode: screen;
+  text-align: center;
+}
+
+h1 {
+  color: rgba(255, 255, 255, 0.99);
+  font-family: 'Arial', Sans-serif;
+  font-size: 63px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: 'Montserrat', Sans-serif;
+}
+.button-text {
+  display: inline-block;
+  background-color: #343a40;
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 100%;
+}
