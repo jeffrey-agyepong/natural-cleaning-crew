@@ -48,7 +48,6 @@ p {
 }
 
 .container {
-  max-width: 1400px;
   text-align: center;
   background-color: #343a40;
   padding: 1px;
@@ -84,8 +83,11 @@ p {
     text-align: center;
   }
   h1 {
+    font-family: 'BrandonGrotW01-Light';
     font-size: 30px;
-    font-family: 'Montserrat', Sans-serif;
+    -webkit-text-fill-color: white;
+
+    -webkit-text-stroke-color: black;
   }
   h2 {
     font-size: 20px;
@@ -100,10 +102,12 @@ p {
     margin: 1rem;
   }
   .about_container {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
   }
   .wwp_container {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
@@ -111,4 +115,8 @@ p {
     width: 200px;
     height: 200px;
   }
+}
+
+.stroke-text {
+  -webkit-text-stroke: 2px black;
 }
