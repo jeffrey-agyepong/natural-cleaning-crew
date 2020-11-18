@@ -1,18 +1,14 @@
+const btnHamburger = document.querySelector('#btnHamburger');
+const header = document.querySelector('.header');
 
-// When the user scrolls the page, execute sticky
-window.onscroll = function(){myfunction()};
-
-// Get the header
-var header = document.getElementById("header");
-
-// Get the offset position of the navbar
-var sticky = header.offsetTop;
-
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myfunction(){
-  if(window.pageYOffset > sticky){
-    header.classList.add("sticky");
-  }else{
-      header.classList.remove("sticky");
-    }
-  }
+btnHamburger.addEventListener('click', function(){
+  
+console.log('open hamburger');
+if(header.classList.contains(open))
+ //Close Hamburger Menu
+{
+  header.classList.remove('open');
+}  else {
+  header.classList.add('open');
+}
+});
