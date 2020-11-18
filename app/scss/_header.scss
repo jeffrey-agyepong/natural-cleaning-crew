@@ -1,28 +1,55 @@
 .header {
+  &.open {
+    .header__toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
   nav {
-    padding: 24px;
+    padding: 20px;
   }
 
   &__ncc {
     font-family: 'BrandonGrotW01-Light';
-    font-size: 22px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 40;
     color: white;
   }
-  &__menu {
+  &__toggle {
     //Mobile menu
     > span {
       display: block;
       width: 26px;
       height: 2px;
       background-color: white;
+      transform-origin: 3px 1px;
 
       &:not(:last-child) {
-        margin-bottom: 3px;
+        margin-bottom: 5px;
       }
     }
   }
-
+  &__menu {
+    position: absolute;
+    background: #343a40;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 1.5rem;
+    width: 100%;
+    a {
+      display: block;
+      text-align: center;
+      padding: 0.5rem;
+    }
+  }
   &__links {
     a {
       font-size: 1rem;
@@ -40,9 +67,46 @@
   }
 }
 
-/*padding: 0.45rem;*/
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+@media (min-width: 640px) {
+  .header {
+    nav {
+      padding: 24px;
+    }
+
+    &__ncc {
+      font-family: 'BrandonGrotW01-Light';
+      font-size: 22px;
+      font-weight: 400;
+      color: white;
+    }
+    &__toggle {
+      //Mobile menu
+      > span {
+        display: block;
+        width: 26px;
+        height: 2px;
+        background-color: white;
+
+        &:not(:last-child) {
+          margin-bottom: 3px;
+        }
+      }
+    }
+
+    &__links {
+      a {
+        font-size: 1rem;
+        margin: 0;
+        color: white;
+
+        &:not(:last-child) {
+          padding-right: 1.25em;
+        }
+
+        &:hover {
+          color: blue;
+        }
+      }
+    }
+  }
 }
