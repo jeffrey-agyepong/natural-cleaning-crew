@@ -12,7 +12,10 @@
       }
     }
   }
-
+  .overlay {
+    opacity: 0;
+    position: fixed;
+  }
   nav {
     padding: 20px;
   }
@@ -30,6 +33,7 @@
       width: 26px;
       height: 2px;
       background-color: white;
+      transition: all 300ms ease-in-out;
       transform-origin: 3px 1px;
 
       &:not(:last-child) {
@@ -48,6 +52,7 @@
       display: block;
       text-align: center;
       padding: 0.5rem;
+      color: white;
     }
   }
   &__links {
