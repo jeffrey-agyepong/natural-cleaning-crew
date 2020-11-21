@@ -17,6 +17,7 @@ body {
   font-family: 'Public Sans', sans-serif;
   line-height: 1.6;
 }
+
 a,
 a:visited,
 a:hover {
@@ -30,7 +31,10 @@ a:hover {
 }
 
 .bg-dark {
-  background-color: #343a40;
+  background-color: #080808;
+}
+.bg-dark-light {
+  background-color: rgba(33, 33, 33, 1);
 }
 
 //Flexbox
