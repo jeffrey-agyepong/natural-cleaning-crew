@@ -71,7 +71,7 @@
       }
 
       &:hover {
-        color: blue;
+        //color: blue;
       }
     }
   }
@@ -81,6 +81,7 @@
   .header {
     nav {
       padding: 24px;
+      margin-right: 18px;
     }
 
     &__ncc {
@@ -114,7 +115,7 @@
         }
 
         &:hover {
-          color: blue;
+          //color: blue;
         }
       }
     }
