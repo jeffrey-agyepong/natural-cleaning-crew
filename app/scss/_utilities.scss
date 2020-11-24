@@ -117,10 +117,10 @@ p {
   .section_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin: auto;
   }
 
   .section_image {
-    margin: auto;
     padding: 20px;
   }
 
