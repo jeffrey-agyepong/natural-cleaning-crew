@@ -9,7 +9,7 @@
 }
 
 .header_image {
-  height: 50vh;
+  height: 60vh;
 }
 
 //Headings
@@ -24,7 +24,6 @@ h1 {
 h2 {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.99);
-  text-align: center;
   font-weight: 500;
   padding: 2px;
   margin-bottom: 10px;
@@ -39,9 +38,14 @@ h3 {
 p {
   font-size: 15px;
   color: rgba(255, 255, 255, 0.99);
-  text-align: center;
 }
+#contact {
+  padding: 25px;
+  margin: 25px;
+}
+
 //Button
+
 .button-text {
   display: inline-block;
   background-color: #f0f0f0;
@@ -52,12 +56,12 @@ p {
 }
 
 .container {
-  text-align: center;
   background-color: #343a40;
   padding: 0.3135rem;
   margin: auto;
   width: 100%;
 }
+//Section
 .section_container {
   display: grid;
   grid-template-columns: auto;
@@ -66,12 +70,22 @@ p {
   margin-right: 0.3215rem;
   width: 100%;
 }
+.section_contact {
+  margin-left: 25px;
+  text-align: left;
+}
+
 .clean {
   width: 100%;
   height: 500px;
   margin: auto;
 }
-
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 /*Large screens(Desktops,tablets)*/
 @media (min-width: 640px) {
   .section_main {
@@ -91,9 +105,9 @@ p {
     font-size: 40px;
   }
   p {
-    font-size: 22px;
+    font-size: 20px;
     color: white;
-    padding: 5px;
+    padding: 3px;
   }
   .clean {
     width: 100%;
@@ -101,11 +115,11 @@ p {
   .section_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    text-align: left;
   }
 
   .section_image {
     margin: auto;
+    padding: 20px;
   }
 
   img {
