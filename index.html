@@ -46,7 +46,7 @@
     </div>
   </header>
 
-  <section class="section_main">
+  <section class="section_main" id="section-main">
     <h1 class="stroke-text">NATURAL CLEANING CREW, LLC</h1>
     <h2 class="hide-for-mobile">The most recommended cleaning service in Wake County on Nextdoor!</h2>
     <button class="button-text"><span>Get in touch</span> </button>
@@ -130,10 +130,16 @@
   <section class="section">
     <div class="container">
       <h3 class="center">CONTACT US</h3>
-      <form>
+      <form method="POST" data-netlify="true">
         <input name="name" type="text" class="feedback-input" placeholder="Name" />
         <input name="email" type="text" class="feedback-input" placeholder="Email" />
         <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+        <div class="field">
+          <input type="file" name="myfile" id="myfile" class="feedback-input" placeholder="Upload File" />
+        </div>
+        <div class="field">
+          <div data-netlify-recaptcha="true"></div>
+        </div>
         <input type="submit" value="SUBMIT" />
       </form>
     </div>

@@ -127,9 +127,12 @@ button {
 @media (min-width: 640px) {
   .section_main {
     background: url(../img/clean2.jpg) no-repeat center/cover;
-    padding: 10rem;
     text-align: center;
   }
+  #section-main {
+    padding: 10rem;
+  }
+
   h1 {
     font-family: 'Montserrat', Sans-serif;
 
