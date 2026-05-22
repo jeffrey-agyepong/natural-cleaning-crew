@@ -39,7 +39,7 @@ import type { ImageMetadata } from 'astro';
 //
 import heroImage from '../assets/images/hero/hero-clean-house.webp';
 // export const heroImage: ImageMetadata | undefined = undefined;
-export default heroImage;
+export { heroImage };
 
 // ── About ─────────────────────────────────────────────────────────────────────
 // Recommended: portrait or square image of your team/job site, at least 900 × 700 px
