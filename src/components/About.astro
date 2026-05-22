@@ -20,19 +20,20 @@ interface Props {
 
 const {
   topper = 'Who We Are',
-  heading = 'Trusted by homeowners for over 15 years',
+  heading = 'Trusted by homeowners for over 10 years',
   body = [
-    'We\'re a locally owned and operated business dedicated to delivering honest, dependable service to our community. Our team of licensed professionals takes pride in every job — big or small.',
-    'From day one, we\'ve built our reputation on doing the work right, showing up on time, and treating every home like our own.',
+    'We\'re a locally owned cleaning company dedicated to delivering honest, dependable service to our community. Our team takes pride in every job, big or small.',
+'From day one, we\'ve built our reputation on doing the work right, showing up on time, and treating every home like our own.',
+'Trusted by homeowners for over 10 years, we continue to deliver consistent, high-quality results with care and attention to detail.',
   ],
   benefits = [
     'Background-checked, licensed professionals',
     'Upfront pricing with no hidden fees',
-    'Satisfaction guaranteed on every project',
+    'Satisfaction guaranteed on every clean',
   ],
   ctaLabel = 'More About Us',
   ctaHref = '/about',
-  imageSrc = localAboutImage ?? PLACEHOLDER,
+  imageSrc = "https://ik.imagekit.io/boxhuwbys/natural-cleaning-crew-bathroom-cleaner.webp",
   imageAlt = 'Friendly professional team on a job site',
 } = Astro.props;
 ---
@@ -55,8 +56,8 @@ const {
 
     <!-- Content -->
     <div class="space-y-5">
-      <span class="text-topper font-bold uppercase tracking-widest text-accent">{topper}</span>
-      <h2 class="font-heading text-h2 font-bold uppercase text-text">{heading}</h2>
+      <span class="text-topper font-bold uppercase tracking-widest text-text">{topper}</span>
+      <h2 class="font-heading text-h2 font-bold uppercase text-green-800">{heading}</h2>
 
       {body.map((paragraph) => (
         <p class="text-text-muted leading-relaxed">{paragraph}</p>
@@ -66,7 +67,7 @@ const {
       <ul class="space-y-3 pt-2" role="list">
         {benefits.map((benefit) => (
           <li class="flex items-start gap-3">
-            <svg class="mt-0.5 size-5 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="mt-0.5 size-5 shrink-0 text-lime-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
             <span class="text-text">{benefit}</span>

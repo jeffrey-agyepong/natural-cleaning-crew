@@ -2,7 +2,7 @@
 interface Review {
   quote: string;
   name: string;
-  location: string;
+  // location: string;
   rating?: number;
 }
 
@@ -16,9 +16,9 @@ const {
   topper = 'Testimonials',
   heading = 'What our customers say',
   reviews = [
-    { quote: 'They showed up on time, explained everything clearly, and finished the job faster than expected. Best service experience we\'ve had.', name: 'Sarah M.', location: 'Denver, CO', rating: 5 },
-    { quote: 'Honest pricing and top-notch work. I\'ve used them for three different projects now and they never disappoint.', name: 'James R.', location: 'Aurora, CO', rating: 5 },
-    { quote: 'Our emergency call was answered in minutes. They had the problem fixed before dinner. Truly dependable.', name: 'Linda K.', location: 'Lakewood, CO', rating: 5 },
+    { quote: 'Our home was made sparkling clean! The attention to detail was unmatched from any other cleaning crew we’ve ever had in our house. Being 9 months pregnant, I could not have appreciated this more as they were able to clean things that I have not been able to in quite awhile. And even better is that my home didn’t reek of chemicals and I know my kids and dog are not breathing in strong toxins. ', name: 'Alyssa G.', location: 'North Carolina', rating: 5 },
+    { quote: 'I highly recommend Natural Cleaning Crew. Rebekah and Jethro are professional, thorough and very detail oriented. They came recommended through a referral for being trust worthy, hard working and using non toxic, clean ingredients. They’ve been amazing!', name: 'Sharon K.', location: 'North Carolina', rating: 5 },
+    { quote: 'We love Rebekah and Jethro! My daughter has a rare form of neuroendocrine cancer, so the natural cleaning was important to us. They are hard workers and pleasant to have in the house, which is important since my husband works from home.', name: 'Stacy C.', location: 'North Carolina', rating: 5 },
   ],
 } = Astro.props;
 ---
@@ -26,8 +26,8 @@ const {
 <section class="bg-surface py-section">
   <div class="mx-auto max-w-site px-4 sm:px-6">
     <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-      <span class="text-topper font-bold uppercase tracking-widest text-accent">{topper}</span>
-      <h2 class="mt-2 font-heading text-h2 font-bold uppercase text-text">{heading}</h2>
+      <span class="text-topper font-bold uppercase tracking-widest text-text">{topper}</span>
+      <h2 class="mt-2 font-heading text-h2 font-bold uppercase text-green-800">{heading}</h2>
     </div>
 
     <ul class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" role="list">
@@ -53,7 +53,7 @@ const {
 
           <div class="mt-4 border-t border-border pt-4">
             <p class="font-semibold text-text">{name}</p>
-            <p class="text-sm text-text-muted">{location}</p>
+            {/* <p class="text-sm text-text-muted">{location}</p> */}
           </div>
         </li>
       ))}

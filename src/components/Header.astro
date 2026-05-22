@@ -1,5 +1,6 @@
 ---
 import { brand } from '../config/brand';
+import logo  from '../assets/images/natural-cleaning-crew-logo.png';
 import { client } from '../data/client';
 
 const nav = [
@@ -24,7 +25,7 @@ const currentPath = Astro.url.pathname;
       href="/"
       class="font-heading text-xl font-bold uppercase tracking-wide text-primary transition-opacity hover:opacity-80"
     >
-      {brand.name}
+      <img src={logo.src} alt="Natural Cleaning Crew Logo" class="h-16 w-auto" />
     </a>
 
     <!-- Desktop nav -->
@@ -50,11 +51,7 @@ const currentPath = Astro.url.pathname;
 
     <!-- Desktop CTA + phone -->
     <div class="hidden items-center gap-4 lg:flex">
-      {client.license && (
-        <span class="rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-text-muted">
-          {client.license}
-        </span>
-      )}
+
       <a
         href={`tel:${client.phoneForTel}`}
         class="text-sm font-semibold text-text hover:text-primary transition-colors"
@@ -63,7 +60,7 @@ const currentPath = Astro.url.pathname;
       </a>
       <a
         href="/contact"
-        class="inline-flex min-h-[44px] items-center rounded-md bg-accent px-5 py-2.5 text-sm font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        class="inline-flex min-h-[44px] items-center rounded-md bg-lime-700 px-5 py-2.5 text-sm font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       >
         Free Quote
       </a>
@@ -123,7 +120,7 @@ const currentPath = Astro.url.pathname;
       </a>
       <a
         href="/contact"
-        class="flex min-h-[44px] items-center justify-center rounded-md bg-accent px-5 py-3 text-base font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90"
+        class="flex min-h-[44px] items-center justify-center rounded-md bg-lime-700 px-5 py-3 text-base font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90"
       >
         Get a Free Quote
       </a>

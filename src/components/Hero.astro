@@ -22,7 +22,7 @@ interface Props {
 }
 
 const {
-  topper = 'Licensed & Insured',
+  topper = 'North Carolina\'s Natural Cleaning Experts',
   heading = brand.tagline,
   description = brand.description,
   ctaLabel = 'Get a Free Quote',
@@ -40,13 +40,13 @@ const {
     <!-- Copy -->
     <div class="order-2 space-y-5 lg:order-1 lg:space-y-6">
       {topper && (
-        <span class="inline-block rounded-full bg-accent/10 px-4 py-1.5 text-topper font-bold uppercase tracking-widest text-accent">
+        <span class="inline-block rounded-full bg-accent/10 px-4 py-1.5 text-topper font-bold uppercase tracking-widest text-lime-700">
           {topper}
         </span>
       )}
 
       <h1
-        class="font-heading text-display font-bold uppercase leading-none tracking-tight text-text"
+        class="font-heading text-display font-bold uppercase leading-none tracking-tight text-green-800"
         transition:name="hero-heading"
       >
         {heading}
@@ -60,7 +60,7 @@ const {
       <div class="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:gap-4">
         <a
           href={ctaHref}
-          class="inline-flex min-h-[44px] items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          class="inline-flex min-h-[44px] items-center justify-center rounded-md bg-lime-700 px-6 py-3 text-base font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           {ctaLabel}
         </a>

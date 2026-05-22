@@ -11,24 +11,24 @@
  */
 
 export const client = {
-  name: 'Small Business Starter',
-  email: 'hello@example.com',
-  phoneForTel: '555-867-5309',
-  phoneFormatted: '(555) 867-5309',
+  name: 'Natural Cleaning Crew',
+  email: 'naturalcleaningcrew@gmail.com',
+  phoneForTel: '919-346-3040',
+  phoneFormatted: '(919) 346-3040',
   /** Business / contractor license number. Displayed in the header and footer
    *  as a trust signal. Set to an empty string to hide it. */
   license: 'Lic# 123456',
   address: {
     lineOne: '123 Main Street',
     lineTwo: 'Suite 100',
-    city: 'Denver',
-    state: 'CO',
-    zip: '80206',
+    city: 'Raleigh',
+    state: 'NC',
+    zip: '27601',
     country: 'US',
     mapLink: 'https://maps.app.goo.gl/example',
   },
   socials: {
-    facebook: 'https://www.facebook.com/',
+    facebook: 'https://www.facebook.com/people/The-Natural-Cleaning-Crew-LLC/',
     instagram: 'https://www.instagram.com/',
     google: 'https://www.google.com/maps',
   },
