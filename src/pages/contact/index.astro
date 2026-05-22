@@ -17,7 +17,7 @@ import { client } from '../../data/client';
 
       <!-- Form -->
       <div class="lg:col-span-3">
-        <h2 class="font-heading text-h2 font-bold uppercase text-text">Send us a message</h2>
+        <h2 class="font-heading text-h2 font-bold uppercase text-green-800">Send us a message</h2>
         <p class="mt-2 mb-8 text-text-muted">
           Fill out the form below and we'll get back to you within one business day.
         </p>
@@ -80,7 +80,7 @@ import { client } from '../../data/client';
 
           <button
             type="submit"
-            class="mt-2 inline-flex min-h-[44px] cursor-pointer items-center justify-center self-start rounded-md bg-accent px-8 py-3 text-base font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            class="mt-2 inline-flex min-h-[44px] cursor-pointer items-center justify-center self-start rounded-md bg-lime-700 px-8 py-3 text-base font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             Send Message
           </button>
@@ -111,9 +111,7 @@ import { client } from '../../data/client';
             rel="noopener noreferrer"
             class="mt-1 block text-text-muted transition-colors hover:text-text"
           >
-            {client.address.lineOne}<br />
-            {client.address.lineTwo && <>{client.address.lineTwo}<br /></>}
-            {client.address.city}, {client.address.state} {client.address.zip}
+            {client.address.city}, {client.address.state}
           </a>
         </div>
 
@@ -123,7 +121,7 @@ import { client } from '../../data/client';
             Mon – Fri: 7:00 AM – 6:00 PM<br />
             Sat: 8:00 AM – 2:00 PM<br />
             Sun: Closed<br />
-            <span class="font-medium text-accent">24/7 Emergency Service Available</span>
+          
           </p>
         </div>
       </aside>
