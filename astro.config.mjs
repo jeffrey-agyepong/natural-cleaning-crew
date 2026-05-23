@@ -7,7 +7,9 @@ import robotsTxt from 'astro-robots-txt';
 export default defineConfig({
   site: 'https://www.example.com',
   output: 'static',
-
+   build: {
+    inlineStylesheets: 'always',
+  },
   integrations: [sitemap(), robotsTxt()],
 
   fonts: [
