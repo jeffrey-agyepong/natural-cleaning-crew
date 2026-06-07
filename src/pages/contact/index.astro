@@ -5,6 +5,9 @@ import Footer from '../../components/Footer.astro';
 import Banner from '../../components/Banner.astro';
 import { brand } from '../../config/brand';
 import { client } from '../../data/client';
+import { reader } from '../../lib/keystatic';
+
+const contact = await reader.singletons.contact.read();
 ---
 
 <BaseLayout title="Contact" description={`Get in touch with ${brand.name}. Request a free quote or ask us a question.`}>
@@ -19,7 +22,7 @@ import { client } from '../../data/client';
       <div class="lg:col-span-3">
         <h2 class="font-heading text-h2 font-bold uppercase text-green-800">Send us a message</h2>
         <p class="mt-2 mb-8 text-text-muted">
-          Fill out the form below and we'll get back to you within one business day.
+          {contact?.intro}
         </p>
 
         <form
@@ -118,10 +121,9 @@ import { client } from '../../data/client';
         <div>
           <h3 class="font-heading text-lg font-semibold text-text">Hours</h3>
           <p class="mt-1 text-text-muted">
-            Mon – Fri: 7:00 AM – 6:00 PM<br />
-            Sat: 8:00 AM – 2:00 PM<br />
-            Sun: Closed<br />
-          
+            {contact?.hours.map((item: { label: string; time: string }) => (
+              <>{item.label}: {item.time}<br /></>
+            ))}
           </p>
         </div>
       </aside>

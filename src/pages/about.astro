@@ -6,21 +6,17 @@ import Banner from "../components/Banner.astro";
 import CTA from "../components/CTA.astro";
 import { Image } from "astro:assets";
 import { brand } from "../config/brand";
+import { reader } from "../lib/keystatic";
 
-const team = [
-  {
-    name: "Rebekah De Beer",
-    role: "Co-Owner/Manager",
-    image: "https://ik.imagekit.io/boxhuwbys/natural-cleaning-crew-rebekah.jpg",
-    bio: `Rebekah has always had a passion for health. When she started cleaning in 2015, she saw the need for a cleaning business that thought carefully about what they are bringing into people's homes and surrounding their bodies with. When she saw the extremely high risk of lung cancer in women who spent many years cleaning, she knew that health had to be one of her top priorities.`,
-  },
-  {
-    name: "Jethro De Beer",
-    role: "Co-Owner/Primary Cleaner",
-    image: "https://ik.imagekit.io/boxhuwbys/natural-cleaning-crew-jethro.jpeg",
-    bio: `Jethro is originally from Johannesburg, South Africa, and came to the US in 2017 when he married Rebekah. After cleaning as a side job for a year, he realized how well they worked as a team and made it their full-time business.`,
-  },
-];
+const about = await reader.singletons.about.read();
+
+const teamEntries = await reader.collections.teamMembers.all();
+const team = teamEntries.map(({ entry }) => ({
+  name: entry.name,
+  role: entry.role,
+  image: entry.image,
+  bio: entry.bio,
+}));
 ---
 
 <BaseLayout
@@ -37,19 +33,15 @@ const team = [
     >
       <div class="space-y-5">
         <span class="text-topper font-bold uppercase tracking-widest text-text">
-          Healthy Living Starts Here
+          {about?.introTopper}
         </span>
 
         <h2 class="font-heading text-h2 font-bold uppercase text-green-800">
-          A Natural Approach to Home & Office Cleaning
+          {about?.introHeading}
         </h2>
 
         <p class="text-text-muted leading-relaxed">
-          At The Natural Cleaning Crew, we believe that a clean environment is
-          essential for a healthy life. Our commitment goes beyond just
-          cleaning—we’re dedicated to creating spaces where you can breathe
-          easy, knowing that every product we use is safe for you and your loved
-          ones. Discover the difference that truly mindful cleaning can make.
+          {about?.introBody}
         </p>
       </div>
 
@@ -83,29 +75,14 @@ const team = [
       </div>
       <div class="space-y-5">
         <span class="text-topper font-bold uppercase tracking-widest text-text"
-          >Our Story</span
+          >{about?.storyTopper}</span
         >
         <h2 class="font-heading text-h2 font-bold uppercase text-green-800">
-          All About Natural Cleaning Crew
+          {about?.storyHeading}
         </h2>
-        <p class="text-text-muted leading-relaxed">
-          At The Natural Cleaning Crew, we are more than just a cleaning
-          service—we are a family dedicated to creating safe, healthy
-          environments for others. Born out of our own sensitivities to harsh
-          chemicals, we understand the importance of using products that are not
-          only effective but also gentle on those with compromised immune
-          systems and other health concerns. Our mission is to deliver
-          exceptional home and office cleaning services that are safe for
-          everyone, especially those who need it most.
-        </p>
-        <p class="text-text-muted leading-relaxed">
-          We are committed to using environmentally-friendly products that
-          protect both our clients and the planet. By choosing us, you’re not
-          only getting a clean space, but also peace of mind knowing that your
-          home or office is free from harmful chemicals. Our goal is to exceed
-          your expectations by providing a level of care and attention that
-          ensures your environment is as safe as it is spotless.
-        </p>
+        {about?.storyBody.map((paragraph) => (
+          <p class="text-text-muted leading-relaxed">{paragraph}</p>
+        ))}
       </div>
     </div>
   </section>

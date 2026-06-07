@@ -5,51 +5,18 @@ import Footer from '../components/Footer.astro';
 import Banner from '../components/Banner.astro';
 import CTA from '../components/CTA.astro';
 import { brand } from '../config/brand';
+import { reader } from '../lib/keystatic';
 
-const services = [
-  {
-    title: 'Dusting',
-    image: 'https://ik.imagekit.io/boxhuwbys/dusting-natural-cleaning-crew.jpg',
-    points: [
-      'Detailed surface and furniture dusting',
-      'Eco-friendly cleaning products',
-      'Attention to hard-to-reach areas',
-      'Perfect for homes and offices',
-    ],
-  },
-  {
-    title: 'Disinfecting and Scrubbing',
-    image: 'https://ik.imagekit.io/boxhuwbys/scrubbing-natural-cleaning-crew.jpg',
-   points: [
-  'Toilets, inside and out',
-  'Sinks and faucets',
-  'Showers and tubs',
-  'Countertops',
-  'Kitchen appliances (outside)',
-  'Inside microwave',
-  'Light switches',
-  'Exterior cabinet surfaces',
-],
-  },
-  {
-    title: 'Vacuuming and Mopping',
-    image: 'https://ik.imagekit.io/boxhuwbys/vacuuming-natural-cleaning-crew.jpg',
-    points: [
-      'All floors',
-      'Large wall air vents',
-      'Fabric couches and chairs',
-    ],
-  },
-  {
-    title: 'Other Services',
-    image: 'https://ik.imagekit.io/boxhuwbys/other-services-natural-cleaning-crew.jpg',
-    points: [
-      'Make beds',
-      'Polish glass, faucets',
-      'Clean front/back glass doors',
-    ],
-  },
-];
+const servicesPage = await reader.singletons.servicesPage.read();
+
+const serviceEntries = await reader.collections.services.all();
+const services = [...serviceEntries]
+  .sort((a, b) => (a.entry.order ?? 0) - (b.entry.order ?? 0))
+  .map(({ entry }) => ({
+    title: entry.title,
+    image: entry.image,
+    points: entry.points,
+  }));
 ---
 
 <BaseLayout
@@ -65,13 +32,11 @@ const services = [
 
       <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
         <h2 class="font-heading text-h2 font-bold uppercase text-green-800">
-          What we can do for you
+          {servicesPage?.heading}
         </h2>
 
         <p class="mt-3 text-text-muted leading-relaxed">
-          Our comprehensive cleaning services are designed with your health and
-          the environment in mind. Every product we use is carefully researched
-          and approved by the Environmental Working Group.
+          {servicesPage?.description}
         </p>
       </div>
 
@@ -118,73 +83,22 @@ const services = [
 
       <div class="mb-8">
         <h2 class="font-heading text-h3 font-bold text-text text-center">
-          Upon Request
+          {servicesPage?.uponRequestHeading}
         </h2>
 
         <p class="mt-2 text-text-muted text-center">
-          Additional cleaning services available upon request.
+          {servicesPage?.uponRequestDescription}
         </p>
       </div>
 
       <div class="grid grid-cols-1 gap-x-12 gap-y-4 sm:grid-cols-2">
-
-        <div class="flex items-start gap-3">
-          <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
-          <span class="text-text-muted">Change bed sheets</span>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
-          <span class="text-text-muted">Dust/clean light fixtures</span>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
-          <span class="text-text-muted">Polish wood furniture</span>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
-          <span class="text-text-muted">Scrub inside oven</span>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
-          <span class="text-text-muted">Clean inside refrigerator</span>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
-          <span class="text-text-muted">Clean inside cabinets</span>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
-          <span class="text-text-muted">Clean inside windows</span>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
-          <span class="text-text-muted">Vacuum/sweep deck</span>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
-          <span class="text-text-muted">Sweep porch</span>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
-          <span class="text-text-muted">Dust ceiling fans</span>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
-          <span class="text-text-muted">Dust blinds</span>
-        </div>
-
+        {servicesPage?.uponRequestItems.map((item) => (
+          <div class="flex items-start gap-3">
+            <span class="mt-2 size-2 shrink-0 rounded-full bg-primary"></span>
+            <span class="text-text-muted">{item}</span>
+          </div>
+        ))}
       </div>
-
 
   </div>
 

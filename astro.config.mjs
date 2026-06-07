@@ -3,14 +3,18 @@ import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
+import netlify from '@astrojs/netlify';
+import react from '@astrojs/react';
+import keystatic from '@keystatic/astro';
 
 export default defineConfig({
   site: 'https://www.example.com',
   output: 'static',
+  adapter: netlify(),
    build: {
     inlineStylesheets: 'always',
   },
-  integrations: [sitemap(), robotsTxt()],
+  integrations: [sitemap(), robotsTxt(), react(), keystatic()],
 
   fonts: [
     {

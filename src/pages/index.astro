@@ -11,6 +11,33 @@ import Gallery from '../components/Gallery.astro';
 import CTA from '../components/CTA.astro';
 import { brand } from '../config/brand';
 import { client } from '../data/client';
+import { reader } from '../lib/keystatic';
+
+const homepage = await reader.singletons.homepage.read();
+
+const allServices = await reader.collections.services.all();
+const previewServices = [...allServices]
+  .sort((a, b) => (a.entry.order ?? 0) - (b.entry.order ?? 0))
+  .slice(0, 3)
+  .map(({ entry }) => ({
+    title: entry.title,
+    description: entry.points[0] ?? '',
+    href: '/services',
+  }));
+
+const allReviews = await reader.collections.reviews.all();
+const previewReviews = allReviews.slice(0, 3).map(({ entry }) => ({
+  quote: entry.quote,
+  name: entry.name,
+  location: entry.location,
+  rating: entry.rating,
+}));
+
+const trustItems = homepage
+  ? homepage.trustItems.map((item: { label: string; value: string }) => ({ label: item.label, value: item.value }))
+  : undefined;
+const aboutBody = homepage ? [...homepage.aboutBody] : undefined;
+const aboutBenefits = homepage ? [...homepage.aboutBenefits] : undefined;
 ---
 
 <BaseLayout
@@ -35,13 +62,28 @@ import { client } from '../data/client';
 >
   <Header slot="header" />
 
-  <Hero />
-  <TrustBar />
-  <Services />
-  <About />
-  <Reviews />
+  <Hero
+    topper={homepage?.heroTopper}
+    heading={homepage?.heroHeading}
+    description={homepage?.heroDescription}
+    ctaLabel={homepage?.heroCtaLabel}
+    secondaryLabel={homepage?.heroSecondaryLabel}
+  />
+  <TrustBar items={trustItems} />
+  <Services services={previewServices} />
+  <About
+    topper={homepage?.aboutTopper}
+    heading={homepage?.aboutHeading}
+    body={aboutBody}
+    benefits={aboutBenefits}
+  />
+  <Reviews reviews={previewReviews} />
   <!-- <Gallery /> -->
-  <CTA />
+  <CTA
+    title={homepage?.ctaTitle}
+    description={homepage?.ctaDescription}
+    buttonText={homepage?.ctaButtonText}
+  />
 
   <Footer slot="footer" />
 </BaseLayout>

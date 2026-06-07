@@ -1,0 +1,8 @@
+{
+  "intro": "Fill out the form below and we'll get back to you within one business day.",
+  "hours": [
+    { "label": "Mon – Fri", "time": "7:00 AM – 6:00 PM" },
+    { "label": "Sat", "time": "8:00 AM – 2:00 PM" },
+    { "label": "Sun", "time": "Closed" }
+  ]
+}
