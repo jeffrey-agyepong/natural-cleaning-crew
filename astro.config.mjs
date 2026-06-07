@@ -14,6 +14,9 @@ export default defineConfig({
    build: {
     inlineStylesheets: 'always',
   },
+  image: {
+    domains: ['ik.imagekit.io'],
+  },
   integrations: [sitemap(), robotsTxt(), react(), keystatic()],
 
   fonts: [
