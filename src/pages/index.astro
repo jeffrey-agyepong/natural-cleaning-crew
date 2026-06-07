@@ -15,13 +15,19 @@ import { reader } from '../lib/keystatic';
 
 const homepage = await reader.singletons.homepage.read();
 
+const previewDescriptions: Record<string, string> = {
+  'Dusting': 'We carefully dust all surfaces, shelves, and hard-to-reach areas to keep your home fresh and allergen-free.',
+  'Disinfecting and Scrubbing': 'We scrub and disinfect bathrooms, kitchens, and high-touch surfaces using safe, non-toxic products.',
+  'Vacuuming and Mopping': 'We vacuum carpets and mop hard floors throughout your home, leaving every room spotless.',
+};
+
 const allServices = await reader.collections.services.all();
 const previewServices = [...allServices]
   .sort((a, b) => (a.entry.order ?? 0) - (b.entry.order ?? 0))
   .slice(0, 3)
   .map(({ entry }) => ({
     title: entry.title,
-    description: entry.points[0] ?? '',
+    description: previewDescriptions[entry.title] ?? entry.points[0] ?? '',
     href: '/services',
   }));
 
