@@ -5,10 +5,6 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# Allow Netlify's Image CDN to transform remote images hosted on ImageKit
-[images]
-  remote_images = ["https:\\/\\/ik\\.imagekit\\.io\\/.*"]
-
 # Security headers
 [[headers]]
   for = "/*"
