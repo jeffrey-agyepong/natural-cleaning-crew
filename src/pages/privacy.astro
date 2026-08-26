@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Banner from '../components/Banner.astro';
+import { brand } from '../config/brand';
+import { client } from '../data/client';
+
+const lastUpdated = 'August 25, 2026';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description={`How ${brand.name} collects, uses, and protects your information.`}
+>
+  <Header slot="header" />
+
+  <Banner title="Privacy Policy" />
+
+  <section class="py-section">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6">
+      <article class="prose prose-lg max-w-none prose-headings:font-heading prose-headings:uppercase prose-a:text-primary-light hover:prose-a:text-primary">
+        <p class="text-sm text-text-muted">Last updated: {lastUpdated}</p>
+
+        <p>
+          {brand.name} ("we," "us," or "our") respects your privacy. This
+          Privacy Policy explains what information we collect through
+          <a href={brand.url}>{brand.url.replace('https://', '')}</a> (the "Site"),
+          how we use it, and the choices you have.
+        </p>
+
+        <h2>Information We Collect</h2>
+        <p>We collect information you provide directly to us, including:</p>
+        <ul>
+          <li>
+            <strong>Contact form submissions</strong> — name, email address,
+            phone number, and any message you send us when requesting a quote
+            or getting in touch.
+          </li>
+          <li>
+            <strong>Communications</strong> — records of emails, calls, or
+            texts you send us, kept to respond to your request and provide
+            service.
+          </li>
+        </ul>
+        <p>
+          We do not knowingly collect payment card details through the Site.
+          Any payment for services is handled directly, not through this
+          website.
+        </p>
+
+        <h2>How We Use Your Information</h2>
+        <ul>
+          <li>To respond to quote requests and inquiries</li>
+          <li>To schedule and provide cleaning services</li>
+          <li>To send appointment confirmations and service-related updates</li>
+          <li>To improve our services and website</li>
+        </ul>
+        <p>We do not sell your personal information.</p>
+
+        <h2>Cookies &amp; Analytics</h2>
+        <p>
+          The Site may use cookies or similar technologies to remember your
+          preferences (such as light/dark mode) and to understand how
+          visitors use the Site. You can disable cookies in your browser
+          settings; some features may not work as intended if you do.
+        </p>
+
+        <h2>Third-Party Services</h2>
+        <p>
+          Contact form submissions are processed through our hosting
+          provider's form-handling service. Links to our Google Business
+          Profile and social media pages take you to third-party sites with
+          their own privacy practices, which we don't control.
+        </p>
+
+        <h2>Data Retention</h2>
+        <p>
+          We keep contact and service information for as long as needed to
+          provide our services, maintain business records, and meet legal
+          obligations.
+        </p>
+
+        <h2>Your Choices</h2>
+        <p>
+          You may ask us to access, correct, or delete the personal
+          information we hold about you by contacting us at
+          <a href={`mailto:${client.email}`}>{client.email}</a>.
+        </p>
+
+        <h2>Children's Privacy</h2>
+        <p>
+          The Site is not directed to children under 13, and we do not
+          knowingly collect information from children.
+        </p>
+
+        <h2>Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. Changes take
+          effect when posted on this page, with the "Last updated" date
+          revised accordingly.
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>
+          Questions about this Privacy Policy? Reach us at
+          <a href={`mailto:${client.email}`}>{client.email}</a> or
+          <a href={`tel:${client.phoneForTel}`}>{client.phoneFormatted}</a>.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
