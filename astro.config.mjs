@@ -8,7 +8,7 @@ import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 
 export default defineConfig({
-  site: 'https://www.example.com',
+  site: 'https://natural-cleaning-crew.vercel.app',
   output: 'static',
   adapter: vercel({ imageService: true }),
    build: {

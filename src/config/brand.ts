@@ -18,7 +18,7 @@ export const brand = {
   tagline: "Professional Cleaning With a Natural Touch",
   description:
     "Natural cleaning services that create healthier, fresher spaces for your home and family.",
-  url: "https://example.com",
+  url: "https://natural-cleaning-crew.vercel.app",
   locale: "en_US",
 
   // ── Fonts ──────────────────────────────────────────────────────────────────
