@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { brand } from '../config/brand';
+---
+
+<BaseLayout title="Page Not Found" description={`The page you're looking for doesn't exist on ${brand.name}'s site.`}>
+  <Header slot="header" />
+
+  <section class="flex min-h-[60vh] items-center justify-center px-4 py-section">
+    <div class="mx-auto max-w-md text-center">
+      <p class="font-heading text-display font-bold text-primary">404</p>
+
+      <h1 class="mt-2 font-heading text-h1 font-bold uppercase text-text">
+        Page Not Found
+      </h1>
+      <p class="mt-4 text-text-muted leading-relaxed">
+        The page you're looking for doesn't exist or may have moved. Let's
+        get you back on track.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/"
+          class="inline-flex min-h-[44px] items-center justify-center rounded-md bg-primary px-8 py-3 text-base font-bold text-primary-fg shadow-sm transition-opacity hover:opacity-90"
+        >
+          Back to Home
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex min-h-[44px] items-center justify-center rounded-md border border-border px-8 py-3 text-base font-bold text-text transition-colors hover:bg-surface"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
