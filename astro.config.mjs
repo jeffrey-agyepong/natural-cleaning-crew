@@ -3,14 +3,14 @@ import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
-import vercel from '@astrojs/vercel';
+import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 
 export default defineConfig({
   site: 'https://natural-cleaning-crew.vercel.app',
   output: 'static',
-  adapter: vercel({ imageService: true }),
+  adapter: netlify(),
    build: {
     inlineStylesheets: 'always',
   },
