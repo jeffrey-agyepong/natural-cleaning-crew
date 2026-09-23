@@ -19,17 +19,22 @@ const contact = await reader.singletons.contact.read();
     <div class="mx-auto grid max-w-site grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-5 lg:gap-14">
 
       <!-- Form -->
-      <div class="lg:col-span-3">
+      <div id="contact-form" class="lg:col-span-3">
+        <div id="contact-form-fields">
         <h2 class="font-heading text-h2 font-bold uppercase text-green-800">Send us a message</h2>
         <p class="mt-2 mb-8 text-text-muted">
           {contact?.intro}
         </p>
 
         <form
+          name="contact"
           method="POST"
-          action="/api/contact"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/contact?submitted=true#contact-form"
           class="flex flex-col gap-5"
         >
+          <input type="hidden" name="form-name" value="contact" />
           <p class="hidden" aria-hidden="true">
             <label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
           </p>
@@ -84,6 +89,27 @@ const contact = await reader.singletons.contact.read();
             Send Message
           </button>
         </form>
+        </div>
+
+        <div id="contact-form-success" class="hidden text-center sm:text-left">
+          <div class="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-accent/10 sm:mx-0">
+            <svg class="size-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h2 class="font-heading text-h2 font-bold uppercase text-green-800">Message Received</h2>
+          <p class="mt-4 text-text-muted leading-relaxed">
+            Thank you for reaching out. We'll get back to you within one business day.
+          </p>
+        </div>
+
+        <script is:inline>
+          if (location.search.includes('submitted=true')) {
+            document.getElementById('contact-form-fields')?.classList.add('hidden');
+            document.getElementById('contact-form-success')?.classList.remove('hidden');
+            history.replaceState(null, '', location.pathname + location.hash);
+          }
+        </script>
       </div>
 
       <!-- Contact info sidebar -->
