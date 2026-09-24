@@ -32,6 +32,7 @@ const contact = await reader.singletons.contact.read();
           data-netlify="true"
           netlify-honeypot="bot-field"
           action="/contact?submitted=true#contact-form"
+          data-astro-reload
           class="flex flex-col gap-5"
         >
           <input type="hidden" name="form-name" value="contact" />
@@ -104,11 +105,15 @@ const contact = await reader.singletons.contact.read();
         </div>
 
         <script is:inline>
-          if (location.search.includes('submitted=true')) {
-            document.getElementById('contact-form-fields')?.classList.add('hidden');
-            document.getElementById('contact-form-success')?.classList.remove('hidden');
-            history.replaceState(null, '', location.pathname + location.hash);
+          function revealContactSuccess() {
+            if (location.search.includes('submitted=true')) {
+              document.getElementById('contact-form-fields')?.classList.add('hidden');
+              document.getElementById('contact-form-success')?.classList.remove('hidden');
+              history.replaceState(null, '', location.pathname + location.hash);
+            }
           }
+          revealContactSuccess();
+          document.addEventListener('astro:page-load', revealContactSuccess);
         </script>
       </div>
 
