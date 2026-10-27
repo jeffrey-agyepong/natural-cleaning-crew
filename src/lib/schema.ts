@@ -18,17 +18,20 @@ export function localBusinessSchema(extra: Record<string, unknown> = {}) {
     image: 'https://ik.imagekit.io/boxhuwbys/natural-cleaning-crew-jawebdesign.webp?updatedAt=1783730222122',
     telephone: client.phoneForTel,
     email: client.email,
+    // Service-area business: no street address, just the home city/region.
     address: {
       '@type': 'PostalAddress',
-      streetAddress: client.address.lineOne,
       addressLocality: client.address.city,
       addressRegion: client.address.state,
-      postalCode: client.address.zip,
       addressCountry: client.address.country,
     },
     areaServed: [
+      ...client.serviceAreas.map((city) => ({
+        '@type': 'City',
+        name: `${city}, NC`,
+        containedInPlace: { '@type': 'State', name: 'North Carolina' },
+      })),
       { '@type': 'State', name: 'North Carolina' },
-      { '@type': 'City', name: 'Raleigh', containedInPlace: { '@type': 'State', name: 'North Carolina' } },
     ],
     knowsAbout: ['Natural cleaning', 'Eco-friendly cleaning', 'Non-toxic house cleaning', 'Green cleaning'],
     keywords: brand.seo.keywords.join(', '),

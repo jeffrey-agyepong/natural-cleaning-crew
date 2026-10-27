@@ -19,16 +19,15 @@ export const client = {
    *  as a trust signal. Set to an empty string to hide it. */
   license: 'Lic# 123456',
   address: {
-    lineOne: '123 Main Street',
-    lineTwo: 'Suite 100',
     city: 'Raleigh',
     state: 'NC',
-    zip: '27601',
     country: 'US',
-    mapLink: 'https://maps.app.goo.gl/example',
+    mapLink: 'https://www.google.com/maps/search/?api=1&query=Raleigh%2C+NC',
   },
+  /** Cities served — used in SEO metadata / JSON-LD (no storefront address). */
+  serviceAreas: ['Raleigh', 'Angier', 'Fuquay-Varina', 'Cary', 'Apex', 'Lillington', 'Holly Springs'],
   socials: {
-    facebook: 'https://www.facebook.com/people/The-Natural-Cleaning-Crew-LLC/',
+    facebook: 'https://www.facebook.com/p/The-Natural-Cleaning-Crew-LLC-61560201158647/',
     instagram: 'https://www.instagram.com/',
     google: 'https://www.google.com/maps',
   },
