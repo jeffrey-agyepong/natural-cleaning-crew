@@ -11,7 +11,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<BaseLayout title="Blog" description={`Tips, guides, and news from ${brand.name}. Stay informed about home maintenance and improvement.`}>
+<BaseLayout title="Natural Cleaning Tips for North Carolina Homes" description={`Natural cleaning tips, guides, and news from ${brand.name} — eco-friendly, non-toxic cleaning advice for North Carolina homes.`}>
   <Header slot="header" />
 
   <Banner title="Blog" />

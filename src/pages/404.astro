@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { brand } from '../config/brand';
 ---
 
-<BaseLayout title="Page Not Found" description={`The page you're looking for doesn't exist on ${brand.name}'s site.`}>
+<BaseLayout noindex title="Page Not Found" description={`The page you're looking for doesn't exist on ${brand.name}'s site.`}>
   <Header slot="header" />
 
   <section class="flex min-h-[60vh] items-center justify-center px-4 py-section">

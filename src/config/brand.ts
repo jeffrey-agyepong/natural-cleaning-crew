@@ -21,6 +21,27 @@ export const brand = {
   url: "https://natural-cleaning-crew.vercel.app",
   locale: "en_US",
 
+  // ── SEO ────────────────────────────────────────────────────────────────────
+  // Metadata only (<head> tags + JSON-LD) — never rendered as page copy.
+  seo: {
+    keyword: "North Carolina Natural Cleaning",
+    description:
+      "North Carolina natural cleaning by Natural Cleaning Crew — non-toxic, eco-friendly house cleaning in Raleigh and across NC for a healthier home. Get a free quote.",
+    keywords: [
+      "North Carolina natural cleaning",
+      "natural cleaning North Carolina",
+      "natural cleaning services NC",
+      "eco-friendly cleaning North Carolina",
+      "non-toxic house cleaning NC",
+      "green cleaning Raleigh NC",
+      "natural house cleaning Raleigh",
+      "chemical-free cleaning service",
+    ],
+    imageAlt: "Natural Cleaning Crew — North Carolina natural cleaning services",
+    region: "US-NC",
+    placename: "Raleigh, North Carolina",
+  },
+
   // ── Fonts ──────────────────────────────────────────────────────────────────
   // To swap fonts: change the `name` values here AND update astro.config.mjs
   // to match (both must stay in sync so Astro can optimise the correct files).

@@ -10,8 +10,8 @@ import Reviews from '../components/Reviews.astro';
 import Gallery from '../components/Gallery.astro';
 import CTA from '../components/CTA.astro';
 import { brand } from '../config/brand';
-import { client } from '../data/client';
 import { reader } from '../lib/keystatic';
+import { localBusinessSchema } from '../lib/schema';
 
 const homepage = await reader.singletons.homepage.read();
 
@@ -47,24 +47,18 @@ const aboutBenefits = homepage ? [...homepage.aboutBenefits] : undefined;
 ---
 
 <BaseLayout
-  title={brand.name}
-  description={brand.description}
-  schema={{
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: client.name,
-    telephone: client.phoneForTel,
-    email: client.email,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: client.address.lineOne,
-      addressLocality: client.address.city,
-      addressRegion: client.address.state,
-      postalCode: client.address.zip,
-      addressCountry: client.address.country,
+  title={`${brand.seo.keyword} Services | ${brand.name}`}
+  description={brand.seo.description}
+  schema={localBusinessSchema({
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Natural Cleaning Services',
+      itemListElement: allServices.map(({ entry }) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: entry.title, areaServed: 'North Carolina' },
+      })),
     },
-    url: client.domain,
-  }}
+  })}
 >
   <Header slot="header" />
 

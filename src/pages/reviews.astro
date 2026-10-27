@@ -5,8 +5,8 @@ import Footer from '../components/Footer.astro';
 import Banner from '../components/Banner.astro';
 import CTA from '../components/CTA.astro';
 import { brand } from '../config/brand';
-import { client } from '../data/client';
 import { reader } from '../lib/keystatic';
+import { localBusinessSchema } from '../lib/schema';
 
 const reviewEntries = await reader.collections.reviews.all();
 const reviews = reviewEntries.map(({ entry }) => ({
@@ -18,19 +18,16 @@ const reviews = reviewEntries.map(({ entry }) => ({
 ---
 
 <BaseLayout
-  title="Reviews"
-  description={`Read reviews and testimonials from ${brand.name} customers. See why homeowners trust us for their projects.`}
-  schema={{
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: client.name,
+  title="North Carolina Natural Cleaning Reviews"
+  description={`Read reviews from ${brand.name} customers and see why Raleigh homeowners trust us for North Carolina natural cleaning with non-toxic products.`}
+  schema={localBusinessSchema({
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',
       reviewCount: String(reviews.length),
       bestRating: '5',
     },
-  }}
+  })}
 >
   <Header slot="header" />
 
