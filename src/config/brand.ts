@@ -26,7 +26,7 @@ export const brand = {
   seo: {
     keyword: "North Carolina Natural Cleaning",
     description:
-      "North Carolina natural cleaning by Natural Cleaning Crew — non-toxic, eco-friendly house cleaning in Raleigh, Cary, Apex, Holly Springs, Fuquay-Varina & nearby. Free quote.",
+      "North Carolina natural cleaning by Natural Cleaning Crew — non-toxic, eco-friendly house cleaning in Raleigh, Cary, Apex, Holly Springs, Fuquay-Varina & nearby.",
     keywords: [
       "North Carolina natural cleaning",
       "natural cleaning North Carolina",

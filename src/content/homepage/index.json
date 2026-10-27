@@ -2,7 +2,7 @@
   "heroTopper": "North Carolina's Natural Cleaning Experts",
   "heroHeading": "Professional Cleaning With a Natural Touch",
   "heroDescription": "Natural cleaning services that create healthier, fresher spaces for your home and family.",
-  "heroCtaLabel": "Get a Free Quote",
+  "heroCtaLabel": "Get a Quote",
   "heroSecondaryLabel": "Our Services",
   "trustItems": [
     { "label": "Licensed", "value": "" },
@@ -22,6 +22,6 @@
     "Satisfaction guaranteed on every clean"
   ],
   "ctaTitle": "Ready to Get Started?",
-  "ctaDescription": "Contact us today for a free, no-obligation quote. We're here to help with any project, big or small.",
-  "ctaButtonText": "Get Your Free Quote"
+  "ctaDescription": "Contact us today for a quote. We're here to help with any project, big or small.",
+  "ctaButtonText": "Get Your Quote"
 }
