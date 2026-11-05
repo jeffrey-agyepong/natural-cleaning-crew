@@ -17,7 +17,7 @@ export const client = {
   phoneFormatted: '(919) 346-3040',
   /** Business / contractor license number. Displayed in the header and footer
    *  as a trust signal. Set to an empty string to hide it. */
-  license: 'Lic# 123456',
+  license: '',
   address: {
     city: 'Raleigh',
     state: 'NC',
