@@ -69,8 +69,10 @@ const aboutBenefits = homepage ? [...homepage.aboutBenefits] : undefined;
     ctaLabel={homepage?.heroCtaLabel}
     secondaryLabel={homepage?.heroSecondaryLabel}
   />
+  <!-- TODO: confirm with client — "Licensed" and "10+ Years Experience" (trustItems in src/content/homepage/index.json) -->
   <TrustBar items={trustItems} />
   <Services services={previewServices} />
+  <!-- TODO: confirm with client — "Trusted by homeowners for over 10 years" (heading + body) and "Background-checked, licensed professionals" (src/content/homepage/index.json) -->
   <About
     topper={homepage?.aboutTopper}
     heading={homepage?.aboutHeading}

@@ -7,12 +7,12 @@
   "trustItems": [
     { "label": "Licensed", "value": "" },
     { "label": "Years Experience", "value": "10+" },
-    { "label": "Jobs Completed", "value": "200+" }
+    { "label": "Homes Cleaned", "value": "200+" }
   ],
   "aboutTopper": "Who We Are",
   "aboutHeading": "Trusted by homeowners for over 10 years",
   "aboutBody": [
-    "We're a locally owned cleaning company dedicated to delivering honest, dependable service to our community. Our team takes pride in every job, big or small.",
+    "We're a locally owned cleaning company dedicated to delivering honest, dependable service to our community. Our team takes pride in every home we clean.",
     "From day one, we've built our reputation on doing the work right, showing up on time, and treating every home like our own.",
     "Trusted by homeowners for over 10 years, we continue to deliver consistent, high-quality results with care and attention to detail."
   ],
@@ -22,6 +22,6 @@
     "Satisfaction guaranteed on every clean"
   ],
   "ctaTitle": "Ready to Get Started?",
-  "ctaDescription": "Contact us today for a quote. We're here to help with any project, big or small.",
+  "ctaDescription": "Contact us today for a free quote. Whether it's a one-time deep clean or regular upkeep, we're here to help.",
   "ctaButtonText": "Get Your Quote"
 }

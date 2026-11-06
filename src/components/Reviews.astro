@@ -1,4 +1,6 @@
 ---
+import { client } from '../data/client';
+
 interface Review {
   quote: string;
   name: string;
@@ -16,8 +18,8 @@ const {
   topper = 'Testimonials',
   heading = 'What our customers say',
   reviews = [
-    { quote: 'Our home was made sparkling clean! The attention to detail was unmatched from any other cleaning crew we’ve ever had in our house. Being 9 months pregnant, I could not have appreciated this more as they were able to clean things that I have not been able to in quite awhile. And even better is that my home didn’t reek of chemicals and I know my kids and dog are not breathing in strong toxins. ', name: 'Alyssa G.', location: 'North Carolina', rating: 5 },
-    { quote: 'I highly recommend Natural Cleaning Crew. Rebekah and Jethro are professional, thorough and very detail oriented. They came recommended through a referral for being trust worthy, hard working and using non toxic, clean ingredients. They’ve been amazing!', name: 'Sharon K.', location: 'North Carolina', rating: 5 },
+    { quote: 'Our home was made sparkling clean! The attention to detail was unmatched from any other cleaning crew we’ve ever had in our house. Being 9 months pregnant, I could not have appreciated this more as they were able to clean things that I have not been able to in quite a while. And even better is that my home didn’t reek of chemicals and I know my kids and dog are not breathing in strong toxins. ', name: 'Alyssa G.', location: 'North Carolina', rating: 5 },
+    { quote: 'I highly recommend Natural Cleaning Crew. Rebekah and Jethro are professional, thorough and very detail oriented. They came recommended through a referral for being trustworthy, hard working and using non toxic, clean ingredients. They’ve been amazing!', name: 'Sharon K.', location: 'North Carolina', rating: 5 },
     { quote: 'We love Rebekah and Jethro! My daughter has a rare form of neuroendocrine cancer, so the natural cleaning was important to us. They are hard workers and pleasant to have in the house, which is important since my husband works from home.', name: 'Stacy C.', location: 'North Carolina', rating: 5 },
   ],
 } = Astro.props;
@@ -30,9 +32,9 @@ const {
       <h2 class="mt-2 font-heading text-h2 font-bold uppercase text-green-800">{heading}</h2>
     </div>
 
-    <ul class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" role="list">
+    <ul class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3" role="list">
       {reviews.map(({ quote, name, location, rating = 5 }) => (
-        <li class="flex flex-col rounded-lg border border-border bg-background p-6 shadow-sm">
+        <li class="flex h-full flex-col rounded-lg border border-border bg-background p-6 shadow-sm">
           <!-- Stars -->
           <div class="mb-4 flex gap-0.5" aria-label={`Rated ${rating} out of 5 stars`}>
             {Array.from({ length: 5 }).map((_, i) => (
@@ -54,6 +56,17 @@ const {
           <div class="mt-4 border-t border-border pt-4">
             <p class="font-semibold text-text">{name}</p>
             {/* <p class="text-sm text-text-muted">{location}</p> */}
+            <a
+              href={client.socials.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-1 inline-flex items-center gap-1.5 text-xs text-text-muted transition-colors hover:text-text"
+            >
+              <svg class="size-3.5" fill="currentColor" viewBox="0 0 24 24" role="img" aria-label="Facebook">
+                <path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07" />
+              </svg>
+              Facebook review
+            </a>
           </div>
         </li>
       ))}
